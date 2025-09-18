@@ -1,20 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
+import axios from "axios"
+import "./App.css"
+import Main from "./main";
 
 function App() {
-  const [message, setMessage] = useState("Loading...");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(true); // roller state
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8010/test")
-    // fetch("https://fastapi-service-tk85.onrender.com/test")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch((err) => setMessage("Error: " + err.message));
+    axios
+      .get("http://127.0.0.1:8010/test")
+      .then((res) => setMessage(res.data.message))
+      .catch((err) => console.error("Error:", err))
+      .finally(() => setLoading(false)); // stop roller
   }, []);
+
+  let content;
+  if (loading) {
+    content = <div className="loader"></div>; // show roller while loading
+  } else {
+    content = <p>{message}</p>; // show message after loading
+  }
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
+     <Main />
       <h1>FastAPI says:</h1>
-      <p>{message}</p>
+      {content}
     </div>
   );
 }
