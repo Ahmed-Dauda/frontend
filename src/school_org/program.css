@@ -1,12 +1,17 @@
+.loader-container {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  height: 100vh;           /* full viewport height */
+}
+
 .loader {
   border: 6px solid #f3f3f3; /* Light gray */
   border-top: 6px solid #3498db; /* Blue */
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 40px;   /* made a bit bigger */
+  height: 40px;
   animation: spin 1s linear infinite;
-  margin: 30px auto;
-  
 }
 
 @keyframes spin {

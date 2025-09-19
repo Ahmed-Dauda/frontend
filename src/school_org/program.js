@@ -19,7 +19,9 @@ function Program() {
     let  content;
 
     if (loading){
-        content = <div className="loader"></div>
+        content = <div className="loader-container">
+              <div className="loader"></div>
+                  </div> 
     } else {
         content = programs.map((program) => (
             <div key={program.id} className="program-card">
