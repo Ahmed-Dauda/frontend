@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import "./App.css"
-import "./main.css"
+import "./items.css"
+
 
 function Main() {
 
