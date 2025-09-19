@@ -9,7 +9,8 @@ function Program() {
 
 
     useEffect( () => {
-        axios.get("http://127.0.0.1:8011/api/program-pages")
+        axios.get("https://fastapi-service-tk85.onrender.com/api/program-pages")
+        // axios.get("http://127.0.0.1:8011/api/program-pages")
         .then((res) => setProgrm(res.data))
         .catch((err) => console.error("error",err))
         .finally(() => setLoading(false));
