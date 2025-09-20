@@ -3,6 +3,7 @@ import axios from "axios";
 import "./items.css"
 
 
+
 function Main() {
 
     const [items, setItems] = useState("");
@@ -15,13 +16,7 @@ function Main() {
         // .finally(() => setLoading(false));
     }, []);
 
-    // let content;
-    // if (loading){
-    //     content = <div className="loader"></div>;
-    // } else{
-    //     <p>{message}</p>;
-    // };
-
+ 
     return (
         <div className="main" >
         <h1>this is awesome</h1>
